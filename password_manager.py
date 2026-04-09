@@ -5,7 +5,6 @@ from caesar import caesar_encrypt
 
 def encrypt_single_pass(filename: str) -> None:
     """TODO: Parte 1."""
-
     
     with open(filename, 'r') as f:
         password = f.readline().strip()
