@@ -7,6 +7,9 @@ def encrypt_single_pass(filename: str) -> None:
     """TODO: Parte 1."""
     pass
 
+def encrypt_single_pass(filename: str) -> None:
+    """TODO: Parte 1."""
+    pass
 
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
