@@ -5,15 +5,18 @@ from caesar import caesar_encrypt
 
 def encrypt_single_pass(filename: str) -> None:
     """TODO: Parte 1."""
-    
-    with open(filename, 'r') as file:
-        password = file.read().strip()
-    
-    encrypted = caesar_encrypt(password)
-    
-    with open(filename, 'w') as file:
-        file.write(encrypted)
 
+    
+    with open(filename, 'r') as f:
+        password = f.readline().strip()
+    
+    encrypted_password = caesar_encrypt(password)
+    
+    with open(filename, 'w') as f:
+        f.write(encrypted_password)
+
+if __name__ == "__main___":
+    encrypt_single_pass("examples/example1.txt")
 
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
