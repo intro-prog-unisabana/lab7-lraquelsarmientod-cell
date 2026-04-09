@@ -20,18 +20,21 @@ if __name__ == "__main___":
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
     
-    with open(filename, 'r') as f:
+    with open(filename, 'r') as file:
         lector = csv.reader(file)
 
-        for file in lector:
-            print(file)
-            
-    for i in range(1, len(rows)): 
-        rows[i][2] = caesar_encrypt(rows[i][2])
-    
-    with open(filename, 'w', newline='') as f:
-        writer = csv.writer(file)
-        writer.writerows(rows)
+        data = []
+
+        for row in lector:
+            data.append(row)
+
+        for index, row in enumerate(data): 
+            if index != 0:
+                row[2] = caesar_encrypt(row[2])
+
+                with open(filename, "w") as file:
+                    writer = csv.writer(file)
+                    writer.writerows(data)
 
 
 def change_password(filename: str, website: str, password: str) -> bool:
@@ -67,3 +70,6 @@ def add_login(filename: str, website_name: str, username: str, password: str) ->
     with open(filename, 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([website_name, username, encrypted])
+
+
+if "__name__" == "__main__":
