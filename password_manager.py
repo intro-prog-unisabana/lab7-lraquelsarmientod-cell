@@ -20,14 +20,16 @@ if __name__ == "__main___":
 def encrypt_passwords_in_file(filename: str) -> None:
     """TODO: Parte 2."""
     
-    with open(filename, 'r') as file:
-        reader = csv.reader(file)
-        rows = [row for row in reader if row] 
-    
+    with open(filename, 'r') as f:
+        lector = csv.reader(file)
+
+        for file in lector:
+            print(file)
+            
     for i in range(1, len(rows)): 
         rows[i][2] = caesar_encrypt(rows[i][2])
     
-    with open(filename, 'w', newline='') as file:
+    with open(filename, 'w', newline='') as f:
         writer = csv.writer(file)
         writer.writerows(rows)
 
