@@ -30,7 +30,7 @@ def encrypt_passwords_in_file(filename: str) -> None:
 
         for index, row in enumerate(data): 
             if index != 0:
-                row[2] = caesar_encrypt(row[2])
+                row[2] = caesar_encrypt(row[1][2])
 
                 with open(filename, "w") as file:
                     writer = csv.writer(file)
